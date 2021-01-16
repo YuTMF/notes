@@ -40,9 +40,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(96, 9);
+            this.label1.Location = new System.Drawing.Point(128, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 25);
+            this.label1.Size = new System.Drawing.Size(93, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Тема:";
             // 
@@ -50,33 +51,37 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(58, 60);
+            this.label2.Location = new System.Drawing.Point(77, 74);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 25);
+            this.label2.Size = new System.Drawing.Size(193, 31);
             this.label2.TabIndex = 1;
             this.label2.Text = "Содержание:";
             // 
             // Tema
             // 
-            this.Tema.Location = new System.Drawing.Point(12, 37);
+            this.Tema.Location = new System.Drawing.Point(16, 46);
+            this.Tema.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Tema.Name = "Tema";
-            this.Tema.Size = new System.Drawing.Size(278, 20);
+            this.Tema.Size = new System.Drawing.Size(369, 22);
             this.Tema.TabIndex = 2;
             // 
             // Soderjanie
             // 
-            this.Soderjanie.Location = new System.Drawing.Point(12, 88);
+            this.Soderjanie.Location = new System.Drawing.Point(16, 108);
+            this.Soderjanie.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Soderjanie.Multiline = true;
             this.Soderjanie.Name = "Soderjanie";
-            this.Soderjanie.Size = new System.Drawing.Size(278, 324);
+            this.Soderjanie.Size = new System.Drawing.Size(369, 398);
             this.Soderjanie.TabIndex = 3;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(12, 418);
+            this.button1.Location = new System.Drawing.Point(16, 514);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(136, 38);
+            this.button1.Size = new System.Drawing.Size(181, 47);
             this.button1.TabIndex = 4;
             this.button1.Text = "Сохранить";
             this.button1.UseVisualStyleBackColor = true;
@@ -85,9 +90,10 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(154, 418);
+            this.button2.Location = new System.Drawing.Point(205, 514);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(136, 38);
+            this.button2.Size = new System.Drawing.Size(181, 47);
             this.button2.TabIndex = 5;
             this.button2.Text = "Отмена";
             this.button2.UseVisualStyleBackColor = true;
@@ -95,10 +101,10 @@
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(304, 470);
+            this.ClientSize = new System.Drawing.Size(405, 578);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Soderjanie);
@@ -106,8 +112,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form2";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
