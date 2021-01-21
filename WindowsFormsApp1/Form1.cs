@@ -5,16 +5,12 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-
     public partial class Form1 : Form
     {
         static public string currentTheme;
         static public string currentMessage;
-        static public string pathWithFiles = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "FolderWithNotes");
-
-
-
-        public void RefreshList()
+        static public string pathWithFiles = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "FolderWithNotes"); //Полный путь до папки C:/Users/username/MyDocuments/FolderWithNotes/
+        public void RefreshList() //Функция обновления листа с файлами
         {
             DirectoryInfo dir = new DirectoryInfo(pathWithFiles);
             FileInfo[] files = dir.GetFiles("*.txt");
@@ -30,13 +26,14 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) //Кнопка нового файла
         {
             Form2 newfile = new Form2();
+            newfile.Owner = this;
             newfile.ShowDialog();
         }
 
-        public void Form1_Load(object sender, EventArgs e)
+        public void Form1_Load(object sender, EventArgs e) 
         {
             RefreshList();
             
@@ -44,12 +41,10 @@ namespace WindowsFormsApp1
             if (!existingDirectory) Directory.CreateDirectory(pathWithFiles);
         }
 
-        private void openfile_Click(object sender, EventArgs e)
+        private void openfile_Click(object sender, EventArgs e) //Кнопка загрузки файла
         {
-            Form2 loaded = new Form2
-            {
-                Owner = this
-            };
+            Form2 loaded = new Form2();
+            loaded.Owner = this;
             try
             {
                 string nameOfFile = Path.GetFileNameWithoutExtension(pathWithFiles + listWithFiles.SelectedItem.ToString());
@@ -63,7 +58,7 @@ namespace WindowsFormsApp1
             } 
         }
 
-        private void delet_Click(object sender, EventArgs e)
+        private void delet_Click(object sender, EventArgs e) //Кнопка удаления файла
         {
             try
             {
@@ -76,15 +71,6 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Выберите файл!");
             }
 
-            listWithFiles.Items.Clear();
-            RefreshList();
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-        private void button1_Click_1(object sender, EventArgs e)
-        {
             listWithFiles.Items.Clear();
             RefreshList();
         }
