@@ -33,7 +33,6 @@
             this.openFile = new System.Windows.Forms.Button();
             this.deleteFile = new System.Windows.Forms.Button();
             this.listWithFiles = new System.Windows.Forms.ListBox();
-            this.refreshButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // addNewFile
@@ -42,7 +41,7 @@
             this.addNewFile.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.addNewFile.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.addNewFile.ForeColor = System.Drawing.Color.Black;
-            this.addNewFile.Location = new System.Drawing.Point(17, 15);
+            this.addNewFile.Location = new System.Drawing.Point(122, 15);
             this.addNewFile.Margin = new System.Windows.Forms.Padding(4);
             this.addNewFile.Name = "addNewFile";
             this.addNewFile.Size = new System.Drawing.Size(86, 86);
@@ -84,18 +83,6 @@
             this.listWithFiles.Name = "listWithFiles";
             this.listWithFiles.Size = new System.Drawing.Size(292, 323);
             this.listWithFiles.TabIndex = 4;
-            this.listWithFiles.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            // 
-            // refreshButton
-            // 
-            this.refreshButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("refreshButton.BackgroundImage")));
-            this.refreshButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.refreshButton.Location = new System.Drawing.Point(223, 15);
-            this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(86, 86);
-            this.refreshButton.TabIndex = 5;
-            this.refreshButton.UseVisualStyleBackColor = true;
-            this.refreshButton.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Form1
             // 
@@ -103,7 +90,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(325, 517);
-            this.Controls.Add(this.refreshButton);
             this.Controls.Add(this.listWithFiles);
             this.Controls.Add(this.deleteFile);
             this.Controls.Add(this.openFile);
@@ -126,7 +112,6 @@
         private System.Windows.Forms.Button openFile;
         private System.Windows.Forms.Button deleteFile;
         private System.Windows.Forms.ListBox listWithFiles;
-        private System.Windows.Forms.Button refreshButton;
     }
 }
 
