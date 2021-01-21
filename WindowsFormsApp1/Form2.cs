@@ -7,8 +7,6 @@ namespace WindowsFormsApp1
 {
     public partial class Form2 : Form
     {
-        Form1 backToForm = new Form1();
-        static public string docs = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
         public Form2()
         {
             InitializeComponent();
@@ -16,37 +14,38 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string filename = Tema.Text;
+            string filename = themeOfMessage.Text;
             
             
-            string path = System.IO.Path.Combine(docs, filename + ".txt"); //moi dokumenti, mojno budet dobavit papku specialnuyu
+            string path = Path.Combine(Form1.pathWithFiles, filename + ".txt"); //moi dokumenti, mojno budet dobavit papku specialnuyu
             StreamWriter sw = new StreamWriter(path, false, Encoding.UTF8);
-            sw.Write(Soderjanie.Text);
+            sw.Write(contentOfMessage.Text);
             sw.Close();
-
             Close();
             
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
             Close();
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            Tema.MaxLength = 255; //v vinde max kol-vo znakov v imeni fayla 255 simvolov
+            themeOfMessage.MaxLength = 255; //v vinde max kol-vo znakov v imeni fayla 255 simvolov
         }
         public string loadFileTema
         {
-            get { return Tema.Text; }
-            set { Tema.Text = value; }
+            get { return themeOfMessage.Text; }
+            set { themeOfMessage.Text = value; }
         }
         public string loadFileMessage
         {
-            get { return Soderjanie.Text; }
-            set { Soderjanie.Text = value; }
+            get { return contentOfMessage.Text; }
+            set { contentOfMessage.Text = value; }
         }
+
+        
     }
 }
