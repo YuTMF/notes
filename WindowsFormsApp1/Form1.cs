@@ -34,7 +34,7 @@ namespace WindowsFormsApp1
         {
             Form2 newfile = new Form2();
             newfile.Owner = this;
-            newfile.ShowDialog();
+            newfile.ShowDialog(); 
         }
 
         public void Form1_Load(object sender, EventArgs e) 
