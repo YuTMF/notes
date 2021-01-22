@@ -34,6 +34,20 @@ namespace WindowsFormsApp1
             {
                 listBox1.Items.Add(fi.ToString());
             }
+            
+             FileInfo[] SortOfName(FileInfo[] file)
+             {
+                
+               Array.Sort(file, (f1, f2) => f1.Name.CompareTo(f2.Name));
+                return file;
+             };
+            FileInfo[] SortOfDate(FileInfo[] file)
+            {
+                Array.Sort(file, new Comparison<FileInfo>((f, f2) => f.CreationTime.CompareTo(f2.CreationTime)));
+                return file;
+            }
+
+            }
         }
 
         private void openfile_Click(object sender, EventArgs e)
