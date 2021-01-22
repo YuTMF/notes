@@ -7,11 +7,13 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
+        
         static public string currentTheme;
         static public string currentMessage;
-        static public string pathWithFiles = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "FolderWithNotes"); //Полный путь до папки C:/Users/username/MyDocuments/FolderWithNotes/
+        static public string pathWithFiles = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "FolderWithNotes\\"); //Полный путь до папки C:/Users/username/MyDocuments/FolderWithNotes/
         public void RefreshList() //Функция обновления листа с файлами
         {
+            listWithFiles.Items.Clear();
             DirectoryInfo dir = new DirectoryInfo(pathWithFiles);
             FileInfo[] files = dir.GetFiles("*.txt");
             foreach (FileInfo fi in files)
@@ -24,21 +26,20 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
-        }
+            bool existingDirectory = Directory.Exists(pathWithFiles);
+            if (!existingDirectory) Directory.CreateDirectory(pathWithFiles);
+        }  
 
         private void button1_Click(object sender, EventArgs e) //Кнопка нового файла
         {
             Form2 newfile = new Form2();
             newfile.Owner = this;
-            newfile.ShowDialog();
+            newfile.ShowDialog(); 
         }
 
         public void Form1_Load(object sender, EventArgs e) 
         {
             RefreshList();
-            
-            bool existingDirectory = Directory.Exists(pathWithFiles);
-            if (!existingDirectory) Directory.CreateDirectory(pathWithFiles);
         }
 
         private void openfile_Click(object sender, EventArgs e) //Кнопка загрузки файла
