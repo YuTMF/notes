@@ -28,7 +28,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
             bool existingDirectory = Directory.Exists(pathWithFiles);
             if (!existingDirectory) Directory.CreateDirectory(pathWithFiles);
-        }
+        } 
 
         private void button1_Click(object sender, EventArgs e) //Кнопка нового файла
         {
